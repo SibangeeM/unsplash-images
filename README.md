@@ -1,8 +1,4 @@
-## Figma URL
 
-[Unsplash Images](https://www.figma.com/file/O2MaAAlr4nznh7m53azatL/Unsplash-images?node-id=0%3A1&t=cYDOCgqOs9IX2If0-1)
-
-## Steps
 
 #### Setup
 
@@ -21,44 +17,6 @@ In the context of creating a state value called 'isDarkTheme' (boolean) and a he
 
 In the toggleDarkTheme add logic to add and remove .dark-theme class to body element based on isDarkTheme value.
 
-#### Dark Theme - CSS
-
-Create CSS variables for the background color and text color for both dark mode and normal mode, as well as a CSS variable for the dark mode transition.
-
-```css
-:root {
-  /* dark mode setup */
-  --dark-mode-bg-color: #333;
-  --dark-mode-text-color: #f0f0f0;
-  --backgroundColor: var(--grey-50);
-  --textColor: var(--grey-900);
-
-  --darkModeTransition: color 0.3s ease-in-out, background-color 0.3s
-      ease-in-out;
-}
-
-.dark-theme {
-  --textColor: var(--dark-mode-text-color);
-  --backgroundColor: var(--dark-mode-bg-color);
-}
-
-body {
-  transition: var(--darkModeTransition);
-  background: var(--backgroundColor);
-  color: var(--textColor);
-}
-```
-
-#### User Prefers Dark Mode
-
-```css
-@media (prefers-color-scheme: dark) {
-  :root {
-    --textColor: var(--dark-mode-text-color);
-    --backgroundColor: var(--dark-mode-bg-color);
-  }
-}
-```
 
 #### SearchForm Structure
 
@@ -112,33 +70,7 @@ To provide a better user experience, you can check whether the user prefers dark
 
 To persist the user's preferred theme across sessions, you can store the isDarkTheme state value in local storage. This will allow the theme to be preserved even if the user closes and reopens the application.
 
-#### Setup ENV Variables in VITE
 
-Environment variables can be used to store sensitive information, such as your Unsplash API key. In order to use environment variables in your application, you will need to set them up in VITE, a build tool for modern web development.
-
-#### Deploy the Application to Netlify and Setup ENV Variables
-
-Once your application is complete, you can deploy it to a hosting platform such as Netlify. When deploying to Netlify, you will need to set up your environment variables to ensure that your application can access your Unsplash API key.
-
-#### Add CSS
-
-Finally, you can add CSS to your application to style the components and provide a polished user interface.
-
-## Additional Info
-
-#### Dark Theme Class - Code
-
-```js
-const body = document.querySelector('body');
-body.classList.toggle('dark-theme', newDarkTheme);
-
-// alternative setup
-document.body.classList.toggle('dark-theme', newDarkTheme);
-```
-
-const body = document.querySelector('body'); - This line selects the body element of the current document using the document.querySelector() method, which returns the first element that matches the specified selector. In this case, it is selecting the body element.
-
-body.classList.toggle('dark-theme', isDarkTheme); - This line toggles the dark-theme class of the body element. The classList property is a read-only list that contains the classes of an element. The toggle() method adds a class to the element if it does not have it, or removes it if it does. In this case, it adds the dark-theme class if isDarkTheme is true, and removes it if isDarkTheme is false.
 
 #### Elements Property
 

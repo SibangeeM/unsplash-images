@@ -2,7 +2,7 @@ import React from "react";
 import { useGlobalContext } from "./Context";
 
 const SearchForm = () => {
-  const { setSearchTerm } = useGlobalContext();
+  const { setSearchTerm, isDarkTheme } = useGlobalContext();
   const handleSubmit = (e) => {
     e.preventDefault();
     //   console.log(e.target.elements)
@@ -15,7 +15,14 @@ const SearchForm = () => {
   };
   return (
     <section>
-      <h1 className="tittle">unsplash Images</h1>
+      {!isDarkTheme ? (
+        <h2 className="title">Discover the World Through Images!</h2>
+      ) : (
+        <>
+          <h2 className="titleDark">Discover the World Through Images!</h2>
+        </>
+      )}
+
       <form className="search-form" onSubmit={handleSubmit}>
         <input
           type="text"

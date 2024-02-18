@@ -98,6 +98,7 @@ h2,
 h3,
 h4,
 h5 {
+  text-align: center;
   margin: 0;
   font-family: var(--headingFont);
   font-weight: 400;
@@ -333,6 +334,9 @@ Search Form
 ========
 */
 .title {
+  color: var(--grey-900);
+}
+.titleDark {
   color: var(--primary-500);
 }
 .search-form {
